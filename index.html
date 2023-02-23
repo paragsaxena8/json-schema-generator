@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    <title>JSON Schema Generator</title>
+    <link rel="stylesheet" href="./assets/pico.min.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <main class="container p-0">
+        <article>
+            <h2>JSON Schema Generator</h2>
+            <textarea name="jsonObj" id="jsonObj" rows="10" placeholder="Enter Your JSON Object"></textarea>
+            <button class="btn-xs" type="submit" onClick="prepareSchema()">
+                Prepare JSON Schema &rarr;</button>
+            <h3>Result:</h3>
+            <textarea name="resultJSONSchema" placeholder="Resulted Schema" rows="15" id="resultJSON"> </textarea>
+            <button type="button" class="contrast btn-xs" onClick="copyContent()">Copy to Clipboard</button>
+        </article>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
