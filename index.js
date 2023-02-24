@@ -14,7 +14,7 @@ const prepareSchema = () => {
       alert("Enter valid JSON");
     }
   } else {
-    alert('Input Value to continue');
+    alert("Input Value to continue");
   }
 };
 
@@ -40,7 +40,6 @@ const createObj = (jsonObject) => {
       if (type === "array") {
         if (jsonObject[key] && jsonObject[key].length > 0) {
           items = jsonObject[key].map((i) => {
-            console.log(i, "🤦‍♂️");
             return createObj(i);
           });
           // obj.properties[key]["items"] = items;
@@ -66,8 +65,6 @@ const createObj = (jsonObject) => {
       return createObj(i);
     });
     obj["items"] = items;
-  } else {
-    console.log(jsonObject, "uncalled");
   }
 
   return obj;
@@ -91,8 +88,6 @@ const prepareJsonType = (value) => {
   } else {
     returnType = "string";
   }
-
-  console.log(value, returnType);
   return returnType;
 };
 
@@ -118,7 +113,7 @@ const stringify = (obj) => {
   let cache = [];
   let str = JSON.stringify(
     obj,
-    function (key, value) {
+    (key, value) => {
       if (typeof value === "object" && value !== null) {
         if (cache.indexOf(value) !== -1) {
           // Circular reference found, discard key
